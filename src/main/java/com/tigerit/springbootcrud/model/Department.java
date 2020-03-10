@@ -1,4 +1,4 @@
-package com.tigerit.testspb.springbootcrud.model;
+package com.tigerit.springbootcrud.model;
 
 import javax.persistence.*;
 

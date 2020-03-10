@@ -1,9 +1,8 @@
-package com.tigerit.testspb.springbootcrud.controller;
+package com.tigerit.springbootcrud.controller;
 
 
-import com.tigerit.testspb.springbootcrud.model.Department;
-import com.tigerit.testspb.springbootcrud.service.DepartmentService;
-import com.tigerit.testspb.springbootcrud.service.DepartmentService;
+import com.tigerit.springbootcrud.model.Department;
+import com.tigerit.springbootcrud.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

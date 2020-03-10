@@ -1,9 +1,7 @@
-package com.tigerit.testspb.springbootcrud.service;
+package com.tigerit.springbootcrud.service;
 
-import com.tigerit.testspb.springbootcrud.model.Department;
-import com.tigerit.testspb.springbootcrud.model.Employee;
-import com.tigerit.testspb.springbootcrud.repository.DepartmentRepository;
-import com.tigerit.testspb.springbootcrud.repository.EmployeeRepository;
+import com.tigerit.springbootcrud.model.Department;
+import com.tigerit.springbootcrud.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

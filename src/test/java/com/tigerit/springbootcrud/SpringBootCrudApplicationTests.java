@@ -1,4 +1,4 @@
-package com.tigerit.testspb.springbootcrud;
+package com.tigerit.springbootcrud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
