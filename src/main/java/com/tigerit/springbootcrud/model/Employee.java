@@ -6,11 +6,13 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "employee_table")
 @EntityListeners(AuditingEntityListener.class)
-public class Employee {
+public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false, nullable = false)
@@ -30,7 +32,7 @@ public class Employee {
     @NotBlank
     @Column(nullable = false)
     private String departmentName;
-    @NotBlank
+    @NotNull
     @Column(nullable = false)
     private Long departmentId;
     @NotBlank

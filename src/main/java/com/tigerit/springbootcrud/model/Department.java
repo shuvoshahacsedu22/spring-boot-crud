@@ -6,6 +6,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "department_table")
@@ -18,10 +19,10 @@ public class Department {
     @NotBlank
     @Column(nullable = false)
     private String departmentName;
-    @NotBlank
+    @NotNull
     @Column(nullable = false)
     private Long numberOfEmployee;
-    @NotBlank
+    @NotNull
     @Column(nullable = false)
     private String runningProjects;
 

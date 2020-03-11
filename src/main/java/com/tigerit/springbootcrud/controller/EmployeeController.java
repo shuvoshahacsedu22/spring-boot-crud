@@ -23,8 +23,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/emp/save")
-    public ResponseEntity create(@RequestBody Employee product) {
-        return ResponseEntity.ok(employeeService.save(product));
+    public ResponseEntity create(@RequestBody Employee employee) {
+        return ResponseEntity.ok(employeeService.save(employee));
     }
 
     @GetMapping("/emp/find-by-id/{id}")
@@ -39,7 +39,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/emp/update-by-id/{id}")
-    public ResponseEntity<Employee> update(@PathVariable Long id, @Valid @RequestBody Employee employee) {
+    public ResponseEntity<Employee> update(@PathVariable Long id, @RequestBody Employee employee) {
         if (!employeeService.findById(id).isPresent()) {
             System.out.println("Id " + id + " is not existed");
             ResponseEntity.badRequest().build();
