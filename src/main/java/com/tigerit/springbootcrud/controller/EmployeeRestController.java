@@ -12,13 +12,22 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class EmployeeController {
+public class EmployeeRestController {
 
-    @Autowired
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
+
+    public EmployeeRestController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
+    @GetMapping("/employee/{id}")
+    public Optional<Employee> getEmployeeById(@PathVariable("id") Long id){
+        return employeeService.findById(id);
+    }
 
     @GetMapping("/emp/find-all")
-    public ResponseEntity<List<Employee>> findAll() {
+    public ResponseEntity<List<Employee>> findAll()
+    {
         return ResponseEntity.ok(employeeService.findAll());
     }
 

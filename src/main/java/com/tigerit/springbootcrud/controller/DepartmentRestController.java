@@ -12,10 +12,13 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class DepartmentController {
+public class DepartmentRestController {
 
-    @Autowired
-    private DepartmentService departmentService;
+    private final DepartmentService departmentService;
+
+    public DepartmentRestController(DepartmentService departmentService) {
+        this.departmentService = departmentService;
+    }
 
     @GetMapping("/dept/find-all")
     public ResponseEntity<List<Department>> findAll() {
