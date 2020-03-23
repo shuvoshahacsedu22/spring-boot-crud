@@ -40,7 +40,7 @@ public class Employee implements Serializable {
     @Column(nullable = false)
     private String joiningDate;
     @NotNull
-    @Column(columnDefinition = "integer default 25")
+    @Column(columnDefinition = "bigint default 1")  //this ensures that we can insert without specifying this column
     private Long status;
 
     @Override
