@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS employee_table (
     DepartmentName VARCHAR(255),
     DepartmentID INT,
     JoiningDate VARCHAR(45),
+    Status INT DEAFAUTL 0,
     PRIMARY KEY (EmployeeID),
     FOREIGN KEY (DepartmentID)
         REFERENCES department_table (DepartmentID)

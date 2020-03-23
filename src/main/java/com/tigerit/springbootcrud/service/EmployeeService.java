@@ -4,6 +4,7 @@ package com.tigerit.springbootcrud.service;
 import com.tigerit.springbootcrud.model.Employee;
 import com.tigerit.springbootcrud.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,6 @@ import java.util.Optional;
 public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
-
     public EmployeeService(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }

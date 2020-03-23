@@ -2,6 +2,7 @@ package com.tigerit.springbootcrud.model;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -38,6 +39,10 @@ public class Employee implements Serializable {
     @NotBlank
     @Column(nullable = false)
     private String joiningDate;
+    @NotNull
+    @Column(columnDefinition = "integer default 25")
+    private Long status;
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -49,6 +54,7 @@ public class Employee implements Serializable {
                 ", departmentName='" + departmentName + '\'' +
                 ", departmentId='" + departmentId + '\'' +
                 ", joiningDate='" + joiningDate + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
     public Long getemployeeId() {
@@ -115,6 +121,9 @@ public class Employee implements Serializable {
         this.joiningDate = joiningDate;
     }
 
+    public Long getStatus(){return status;}
+    public void setStatus(Long status){this.status=status;}
+
     public Employee(Long employeeId, String employeeName, String employeeDesignation, String employeeEmail, String employeeMobile, String departmentName, Long departmentId, String joiningDate) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
@@ -124,7 +133,7 @@ public class Employee implements Serializable {
         this.departmentName = departmentName;
         this.departmentId = departmentId;
         this.joiningDate = joiningDate;
-
+        this.status = 1L;
     }
     public Employee(){
         this.employeeId = null;
@@ -135,6 +144,8 @@ public class Employee implements Serializable {
         this.departmentName = null;
         this.departmentId = null;
         this.joiningDate = null;
+        this.joiningDate = null;
+        this.status = 1L;
 
     }
 }
